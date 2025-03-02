@@ -4,13 +4,13 @@
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
     --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --text-color: #333;
-    --text-light: #7f8c8d;
+    --dark-color: #1a2a3a;
+    --text-color: #ecf0f1;
+    --text-light: #bdc3c7;
     --font-primary: 'Roboto', sans-serif;
     --font-heading: 'Playfair Display', serif;
     --transition: all 0.3s ease;
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     --border-radius: 5px;
 }
 
@@ -28,7 +28,7 @@ body {
     font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #fff;
+    background-color: var(--dark-color);
 }
 
 a {
@@ -61,7 +61,7 @@ img {
 .section-title {
     font-family: var(--font-heading);
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--light-color);
     text-align: center;
     margin-bottom: 3rem;
     position: relative;
@@ -114,15 +114,15 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(26, 42, 58, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     transition: var(--transition);
 }
 
 header.scrolled {
     padding: 10px 0;
-    background-color: white;
+    background-color: var(--dark-color);
 }
 
 nav {
@@ -136,7 +136,7 @@ nav {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--light-color);
 }
 
 .nav-menu {
@@ -148,7 +148,7 @@ nav {
 }
 
 .nav-menu a {
-    color: var(--text-color);
+    color: var(--text-light);
     font-weight: 500;
     position: relative;
 }
@@ -169,6 +169,10 @@ nav {
     width: 100%;
 }
 
+.nav-menu a:hover {
+    color: var(--light-color);
+}
+
 .menu-toggle {
     display: none;
     font-size: 1.5rem;
@@ -178,9 +182,10 @@ nav {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('../images/hero-bg.jpg');
+    background: linear-gradient(to bottom right, #2c3e50, #3498db);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     text-align: center;
@@ -265,7 +270,7 @@ nav {
 
 .detail-item h3 {
     font-family: var(--font-heading);
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -295,10 +300,10 @@ nav {
 
 .resume-section h3 {
     font-family: var(--font-heading);
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--light-color);
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.5rem;
 }
 
@@ -431,7 +436,7 @@ nav {
     display: flex;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid var(--light-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .publication-year {
@@ -443,7 +448,7 @@ nav {
 .publication-details h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--light-color);
 }
 
 .publication-details .authors {
@@ -476,7 +481,7 @@ nav {
 }
 
 .project-card {
-    background-color: white;
+    background-color: var(--primary-color);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -485,7 +490,7 @@ nav {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .project-image {
@@ -511,7 +516,7 @@ nav {
 .project-content h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--light-color);
 }
 
 .project-content p {
@@ -526,8 +531,8 @@ nav {
 }
 
 .tag {
-    background-color: var(--light-color);
-    color: var(--text-color);
+    background-color: var(--dark-color);
+    color: var(--text-light);
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -537,7 +542,7 @@ nav {
 
 /* Contact Section */
 .contact {
-    background-color: var(--light-color);
+    background-color: var(--primary-color);
 }
 
 .contact-content {
@@ -566,7 +571,7 @@ nav {
 .contact-item h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--light-color);
 }
 
 .contact-social {
@@ -576,7 +581,7 @@ nav {
 .contact-social h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--light-color);
 }
 
 .contact-form .form-group {
@@ -587,13 +592,16 @@ nav {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
+    color: var(--light-color);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-color);
     border-radius: var(--border-radius);
     font-family: var(--font-primary);
     font-size: 1rem;
@@ -603,12 +611,13 @@ nav {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: #15232d;
+    color: var(--text-light);
     padding: 2rem 0;
     text-align: center;
 }

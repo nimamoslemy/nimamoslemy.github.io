@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .image-container {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+        }
+        .bg-test {
+            width: 100%;
+            height: 400px;
+            background-image: url('images/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Test</h1>
+    
+    <h2>Direct Image Tag</h2>
+    <div class="image-container">
+        <img src="images/hero-bg.png" alt="Hero Background">
+    </div>
+    
+    <h2>CSS Background Image</h2>
+    <div class="bg-test"></div>
+    
+    <p>If you can see the image in both sections above, the image file is working correctly.</p>
+</body>
+</html> 
