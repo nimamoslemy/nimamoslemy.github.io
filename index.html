@@ -3,344 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nima Moslemy</title>
+    <title>Nima Moslemy | Additive Manufacturing</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Nima Moslemy</div>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#resume">CV</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Nima Moslemy</h1>
-                <h2>PhD Researcher in Additive Manufacturing</h2>
-                <p>School of Engineering and Physical Sciences, Heriot-Watt University</p>
-                <div class="social-links">
-                    <a href="mailto:n.moslemy@hw.ac.uk" target="_blank"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/nimamoslemy/?originalSubdomain=ir" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://scholar.google.com/citations?user=oj20_dkAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="https://www.researchgate.net/profile/Nima-Moslemy" target="_blank"><i class="fab fa-researchgate"></i></a>
-                </div>
-                <a href="#contact" class="btn">Get in Touch</a>
+    <!-- Dynamic Lattice Canvas -->
+    <canvas id="lattice-canvas"></canvas>
+    
+    <div class="site-wrapper">
+        <header>
+            <div class="container">
+                <nav>
+                    <div class="logo">
+                        <span class="logo-mark"><i class="fa fa-cubes"></i></span> 
+                        <span class="logo-text">N. Moslemy</span>
+                    </div>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="active">Initialize</a></li>
+                        <li><a href="#about">Specs</a></li>
+                        <li><a href="#resume">Metrics</a></li>
+                        <li><a href="#publications">Outputs</a></li>
+                        <li><a href="#projects">Prototypes</a></li>
+                        <li><a href="#contact">Interface</a></li>
+                    </ul>
+                </nav>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/profile.jpg" alt="Nima Moslemy">
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content glass-panel">
+                    <div class="top-tag">SYS.RDY // CORE_ACTIVE</div>
+                    <h1>NIMA MOSLEMY</h1>
+                    <h2>PhD Researcher structure.material.manufacturing</h2>
+                    <p>School of Engineering and Physical Sciences<br>Heriot-Watt University</p>
+                    <div class="social-links">
+                        <a href="mailto:n.moslemy@hw.ac.uk" target="_blank"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/nimamoslemy/?originalSubdomain=ir" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.com/citations?user=oj20_dkAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://www.researchgate.net/profile/Nima-Moslemy" target="_blank"><i class="fab fa-researchgate"></i></a>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Connect System</a>
                 </div>
-                <div class="about-text">
-                    <p>Greetings, I am Nima Moslemy, a professional with expertise in additive manufacturing. I am dedicated to advancing science and technology within this field and continuously seek opportunities to contribute to its growth and innovation.</p>
-                    <p> I am currently a post-graduate researcher at Heriot-Watt University, where I am working on a project funded by the Engineering and Physical Sciences Research Council (EPSRC). </p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <h3>Research Interests</h3>
-                            <ul>
-                                <li>Additive Manufacturing</li>
-                                <li>3D Printing</li>
-                                <li>Metal Additive Manufacturing</li>
-                                <li>Meta-Materials</li>
-                                <li>Biomedical Engineering</li>
-                            </ul>
-                        </div>
-                        <div class="detail-item">
-                            <h3>Education</h3>
-                            <ul>
-                                <li>Artificial Intelligence</li>
-                                <li>Machine Learning</li>
-                                <li>Mechanical Engineering</li>
-                                <li>Materials Science</li>
-                                <li>Biomechanics</li>
-                            </ul>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <div class="hex-icon"><i class="fa fa-user-astronaut"></i></div>
+                    <h2 class="section-title">Specs & Overview</h2>
+                </div>
+                <div class="about-content glass-panel">
+                    <div class="about-image">
+                        <div class="img-frame">
+                            <img src="images/profile.jpg" alt="Nima Moslemy">
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="resume" class="resume">
-        <div class="container">
-            <h2 class="section-title">Curriculum Vitae</h2>
-            <div class="resume-content">
-                <div class="resume-section">
-                    <h3>Experience</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">Jan 2025 - Present</div>
-                            <div class="timeline-content">
-                                <h4>Post-graduate Researcher</h4>
-                                <p>School of Engineering and Physical Sciences, Heriot-Watt University, Edinburgh, UK</p>
+                    <div class="about-text">
+                        <p>Greetings, I am Nima Moslemy, a professional with expertise in additive manufacturing. I am dedicated to advancing science and technology within this field and continuously seek opportunities to contribute to its growth and innovation.</p>
+                        <p>I am currently a post-graduate researcher at Heriot-Watt University, working on a project funded by the EPSRC.</p>
+                        <div class="about-details">
+                            <div class="detail-item">
+                                <h3><i class="fa fa-microscope"></i> Research Domains</h3>
                                 <ul>
-                                    <li>Teaching Assistant for Design and Manufacture course</li>
+                                    <li>Additive Manufacturing</li>
+                                    <li>3D Printing Technologies</li>
+                                    <li>Metal AM Processes</li>
+                                    <li>Meta-Materials</li>
+                                    <li>Biomedical Engineering</li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Sep 2021 - Dec 2024</div>
-                            <div class="timeline-content">
-                                <h4>Research Assistant</h4>
-                                <p>Bio Fabrication Lab (BFL), Amirkabir University of Technology, Tehran, Iran</p>
+                            <div class="detail-item">
+                                <h3><i class="fa fa-brain"></i> Core Knowledge</h3>
                                 <ul>
-                                    <li>Teaching Assistant for multiple courses including Strength of Material (II) and 3D Printing Methods</li>
-                                    
-                                    <li>Conducted research on edible scaffolds and bioprinting</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Sep 2021 - Sep 2022</div>
-                            <div class="timeline-content">
-                                <h4>Head of Manufacturing Department</h4>
-                                <p>CMFRC (Cranio-Maxillofacial Research Center), Shariati's Hospital, Tehran, Iran</p>
-                                <ul>
-                                    
-                                    <li>Designed and printed over 600 patient-specific prostheses using SLM, PolyJet, DLP, and FDM</li>
-                                    <li>Successfully upgraded all devices during management tenure</li>
+                                    <li>Artificial Intelligence</li>
+                                    <li>Machine Learning</li>
+                                    <li>Mechanical Engineering</li>
+                                    <li>Materials Science</li>
+                                    <li>Biomechanics</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="resume-section">
-                    <h3>Education</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">Jan 2025 - Dec 2028</div>
-                            <div class="timeline-content">
-                                <h4>PhD in Mechanical Engineering</h4>
-                                <p>Heriot-Watt University, Edinburgh, UK</p>
-                                <p>Supervisors: Dr. Faezeh Shalchy, Dr. Ali Ozel, and Dr. Muhammad Ikhlaq</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Sep 2021 - Dec 2023</div>
-                            <div class="timeline-content">
-                                <h4>MSc in Biomechanical Engineering</h4>
-                                <p>Amirkabir University of Technology</p>
-                                <p>Thesis: "Design and fabrication of edible scaffolding for use in cultured meat by 3D bioprinting."</p>
-                                <p>Supervisors: Dr. Nabiollah Abolfathi and Dr. Mohammad Tafazzoli-Shadpour</p>
-                                <p>Grade: A Level Project Mark</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Sep 2017 - Sep 2021</div>
-                            <div class="timeline-content">
-                                <h4>BSc in Biomechanical Engineering</h4>
-                                <p>Amirkabir University of Technology</p>
-                                <p>Thesis: "Design and manufacture of RTV-2 silicone 3D printer."</p>
-                                <p>Supervisor: Dr. Nabiollah Abolfathi</p>
-                                <p>Grade: A Level Project Mark</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="resume-section">
-                    <h3>Skills</h3>
-                    <div class="skills-container">
-                        <div class="skill-category">
-                            <h4>Technical Skills</h4>
-                            <ul>
-                                <li>3D Printing (SLM, PolyJet, DLP, FDM)</li>
-                                <li>Surface Analysis & Measurements</li>
-                                <li>Mechanical Testing</li>
-                                <li>Cell Culture & Bioprinting</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Software & Programming</h4>
-                            <ul>
-                                <li>Python, C, HTML, CSS, LaTeX</li>
-                                <li>Materialise Software (Mimics, 3-Matic, Magics)</li>
-                                <li>Solidworks, Inventor, nTopology, Witness Horizon, Catia</li>
-                                <li>Abaqus, Volume Graphics</li>
-                                <li>MATLAB, ImageJ, GraphPad Prism</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Languages</h4>
-                            <ul>
-                                <li>English (Fluent)</li>
-                                <li>Persian (Native)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <div class="publications-content">
-                <div class="publication-list">
-                    <div class="publication-item">
-                        <div class="publication-year">2025</div>
-                        <div class="publication-details">
-                            <h3>Role of artificial intelligence in data-centric additive manufacturing processes for biomedical applications</h3>
-                            <p class="authors">Mohammadnabi, S., <strong>Moslemy, N.</strong>, Taghvaei, H., Zia, A.W., Askarinejad, S., Shalchy, F.</p>
-                            <p class="journal">Journal of the Mechanical Behavior of Biomedical Materials, Volume 166, June 2025, 106949</p>
-                            <div class="publication-links">
-                                <a href="https://doi.org/10.1016/j.jmbbm.2025.106949" class="publication-link">DOI</a>
+        <section id="resume" class="resume">
+            <div class="container">
+                <div class="section-header">
+                    <div class="hex-icon"><i class="fa fa-chart-bar"></i></div>
+                    <h2 class="section-title">Performance Metrics</h2>
+                </div>
+                <div class="resume-content">
+                    <div class="resume-section glass-panel">
+                        <h3><i class="fa fa-cogs"></i> Professional Experience</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-node"></div>
+                                <div class="timeline-date">Jan 2025 - Present</div>
+                                <div class="timeline-content">
+                                    <h4>Post-graduate Researcher</h4>
+                                    <p>Heriot-Watt University, Edinburgh, UK</p>
+                                    <ul>
+                                        <li>Teaching Assistant for Design and Manufacture course</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-node"></div>
+                                <div class="timeline-date">Sep 2021 - Dec 2024</div>
+                                <div class="timeline-content">
+                                    <h4>Research Assistant</h4>
+                                    <p>Bio Fabrication Lab (BFL), Amirkabir University of Technology, Iran</p>
+                                    <ul>
+                                        <li>Teaching Assistant for Strength of Material (II) and 3D Printing</li>
+                                        <li>Conducted research on edible scaffolds and bioprinting</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-node"></div>
+                                <div class="timeline-date">Sep 2021 - Sep 2022</div>
+                                <div class="timeline-content">
+                                    <h4>Head of Manufacturing Department</h4>
+                                    <p>CMFRC, Shariati's Hospital, Tehran, Iran</p>
+                                    <ul>
+                                        <li>Designed over 600 specific prostheses (SLM, PolyJet, DLP, FDM)</li>
+                                        <li>Device infrastructure optimization</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="publication-item">
-                        <div class="publication-year">2023</div>
-                        <div class="publication-details">
-                            <h3>Review in Edible Materials for Sustainable Cultured Meat: Scaffolds and Microcarriers Production</h3>
-                            <p class="authors"><strong>Moslemy, N.</strong>, Sharifi, E., Asadi-Eydivand, M., Abolfathi, N.</p>
-                            <p class="journal">International Journal of Food Science and Technology</p>
-                            <div class="publication-links">
-                                <a href="https://doi.org/10.1111/ijfs.16703" class="publication-link">DOI</a>
+                    <div class="resume-section glass-panel">
+                        <h3><i class="fa fa-graduation-cap"></i> Academic Training</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-node"></div>
+                                <div class="timeline-date">Jan 2025 - Dec 2028</div>
+                                <div class="timeline-content">
+                                    <h4>PhD in Mechanical Engineering</h4>
+                                    <p>Heriot-Watt University, Edinburgh, UK</p>
+                                    <p class="supervisors">Supervisors: Dr. F. Shalchy, Dr. A. Ozel, Dr. M. Ikhlaq</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-node"></div>
+                                <div class="timeline-date">Sep 2021 - Dec 2023</div>
+                                <div class="timeline-content">
+                                    <h4>MSc in Biomechanical Engineering</h4>
+                                    <p>Amirkabir University of Technology</p>
+                                    <p class="thesis">"Design and fabrication of edible scaffolding for use in cultured meat by 3D bioprinting."</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-node"></div>
+                                <div class="timeline-date">Sep 2017 - Sep 2021</div>
+                                <div class="timeline-content">
+                                    <h4>BSc in Biomechanical Engineering</h4>
+                                    <p>Amirkabir University of Technology</p>
+                                    <p class="thesis">"Design and manufacture of RTV-2 silicone 3D printer."</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="publication-item">
-                        <div class="publication-year">2024</div>
-                        <div class="publication-details">
-                            <h3>Development of an Edible Scaffold Utilizing Isolated Soy Protein for Sustainable Cultured Meat Production through 3D Bioprinting</h3>
-                            <p class="authors"><strong>Moslemy, N.</strong>, Taffazoli, M., Abolfathi, N.</p>
-                            <p class="journal">(Submitted)</p>
+                    <div class="resume-section glass-panel">
+                        <h3><i class="fa fa-code-branch"></i> Toolchain & Skills</h3>
+                        <div class="skills-container">
+                            <div class="skill-category">
+                                <h4>Hardware / Lab</h4>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 95%;"><span>3D Printing (SLM, PolyJet, FDM)</span></div></div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 85%;"><span>Surface & Mech Testing</span></div></div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 80%;"><span>Cell Culture & Bioprinting</span></div></div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Software / Dev</h4>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 90%;"><span>Python, C, MATLAB</span></div></div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 85%;"><span>Materialise (Mimics, Magics)</span></div></div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 90%;"><span>Solidworks, nTopology, Abaqus</span></div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Research Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/AMinAI.jpeg" alt="AM Research">
-                    </div>
-                    <div class="project-content">
-                        <h3>Role of artificial intelligence in data-centric additive manufacturing processes for biomedical applications</h3>
-                        <p>We are pleased to announce the release of our review article titled "Role of Artificial Intelligence in Data-Centric Additive Manufacturing Processes for Biomedical Applications." This work is now accessible online in the esteemed Journal of the Mechanical Behavior of Biomedical Materials.</p>
-                        <div class="project-tags">
-                            <span class="tag">Artificial Intelligence</span>
-                            <span class="tag">Additive Manufacturing</span>
-                            <span class="tag">Metal Additive Manufacturing</span>
-                        </div>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7300262521549066242/" class="btn-small" target="_blank">View on LinkedIn</a>
-                    </div>
+        <section id="publications" class="publications">
+            <div class="container">
+                <div class="section-header">
+                    <div class="hex-icon"><i class="fa fa-file-alt"></i></div>
+                    <h2 class="section-title">Data Outputs</h2>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/meat.jpeg" alt="Cultured meat">
-                    </div>
-                    <div class="project-content">
-                        <h3>Review in edible materials for sustainable cultured meat: scaffolds and microcarriers production</h3>
-                        <p>We are delighted to announce the publication of our paper titled "Review in Edible Materials for Sustainable Cultured Meat: Scaffolds and Microcarriers Production" in the International Journal of Food Science & Technology.</p>
-                        <div class="project-tags">
-                            <span class="tag">Edible Scaffolds</span>
-                            <span class="tag">Microcarriers</span>
-                            <span class="tag">Cultured Meat</span>
+                <div class="publications-content">
+                    <div class="publication-list glass-panel">
+                        <div class="publication-item">
+                            <div class="publication-year">[2025]</div>
+                            <div class="publication-details">
+                                <h3>Role of artificial intelligence in data-centric additive manufacturing processes for biomedical applications</h3>
+                                <p class="authors">Mohammadnabi, S., <strong>Moslemy, N.</strong>, Taghvaei, H., Zia, A.W., Askarinejad, S., Shalchy, F.</p>
+                                <p class="journal">Journal of the Mechanical Behavior of Biomedical Materials, Volume 166, June 2025</p>
+                                <div class="publication-links">
+                                    <a href="https://doi.org/10.1016/j.jmbbm.2025.106949" class="btn-outline">DOI Link</a>
+                                </div>
+                            </div>
                         </div>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7105873171978801154/" class="btn-small" target="_blank">View on LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p><a href="mailto:n.moslemy@hw.ac.uk">n.moslemy@hw.ac.uk</a></p>
                         
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Location</h3>
-                        <p>School of Engineering and Physical Sciences<br>Heriot-Watt University<br>Edinburgh, UK</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <h3>Phone</h3>
-                        <p><a href="tel:+447877667926">(+44) 7877667926</a></p>
-                    </div>
-                    <div class="contact-social">
-                        <h3>Connect</h3>
-                        <div class="social-links">
-                            <a href="mailto:n.moslemy@hw.ac.uk" target="_blank"><i class="fas fa-envelope"></i></a>
-                            <a href="https://www.linkedin.com/in/nima-moslemy" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                            <a href="https://www.researchgate.net/" target="_blank"><i class="fab fa-researchgate"></i></a>
+                        <div class="publication-item">
+                            <div class="publication-year">[2023]</div>
+                            <div class="publication-details">
+                                <h3>Review in Edible Materials for Sustainable Cultured Meat: Scaffolds and Microcarriers Production</h3>
+                                <p class="authors"><strong>Moslemy, N.</strong>, Sharifi, E., Asadi-Eydivand, M., Abolfathi, N.</p>
+                                <p class="journal">International Journal of Food Science and Technology</p>
+                                <div class="publication-links">
+                                    <a href="https://doi.org/10.1111/ijfs.16703" class="btn-outline">DOI Link</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <div class="publication-year">[2024]</div>
+                            <div class="publication-details">
+                                <h3>Development of an Edible Scaffold Utilizing Isolated Soy Protein for Sustainable Cultured Meat Production through 3D Bioprinting</h3>
+                                <p class="authors"><strong>Moslemy, N.</strong>, Taffazoli, M., Abolfathi, N.</p>
+                                <p class="journal">[Under Review]</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; <span id="year"></span> Nima Moslemy. All Rights Reserved.</p>
-                <p>Last Updated: <span id="lastUpdated"></span></p>
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <div class="hex-icon"><i class="fa fa-project-diagram"></i></div>
+                    <h2 class="section-title">Prototypes & Initiatives</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card glass-panel">
+                        <div class="project-image">
+                            <div class="tech-overlay"></div>
+                            <img src="images/AMinAI.jpeg" alt="AM Research">
+                        </div>
+                        <div class="project-content">
+                            <h3>AI in Additive Manufacturing</h3>
+                            <p>Review of Artificial Intelligence in Data-Centric Additive Manufacturing Processes for Biomedical Applications.</p>
+                            <div class="project-tags">
+                                <span class="tag">AI</span>
+                                <span class="tag">AM</span>
+                                <span class="tag">Biomedical</span>
+                            </div>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7300262521549066242/" class="btn-outline" target="_blank">Access Network</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card glass-panel">
+                        <div class="project-image">
+                            <div class="tech-overlay"></div>
+                            <img src="images/meat.jpeg" alt="Cultured meat">
+                        </div>
+                        <div class="project-content">
+                            <h3>Sustainable Cultured Meat</h3>
+                            <p>Development of edible scaffolds and microcarriers focusing on bio-materials and their advanced applications.</p>
+                            <div class="project-tags">
+                                <span class="tag">Scaffolds</span>
+                                <span class="tag">Microcarriers</span>
+                                <span class="tag">Bio</span>
+                            </div>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7105873171978801154/" class="btn-outline" target="_blank">Access Network</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <div class="hex-icon"><i class="fa fa-satellite-dish"></i></div>
+                    <h2 class="section-title">Communication Interface</h2>
+                </div>
+                <div class="contact-content glass-panel">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fa fa-terminal"></i>
+                            <h3>Direct Link</h3>
+                            <p><a href="mailto:n.moslemy@hw.ac.uk" class="glow-text">n.moslemy@hw.ac.uk</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa fa-map-marker-alt"></i>
+                            <h3>Coordinates</h3>
+                            <p>Heriot-Watt University<br>Edinburgh, UK</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa fa-signal"></i>
+                            <h3>Channel</h3>
+                            <p><a href="tel:+447877667926" class="glow-text">+44 7877667926</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Identifier</label>
+                                <input type="text" id="name" name="name" required placeholder="Enter Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Return Protocol</label>
+                                <input type="email" id="email" name="email" required placeholder="Enter Email Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Vector</label>
+                                <input type="text" id="subject" name="subject" required placeholder="Subject Line">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Payload</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Initialize Message..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Transmit <i class="fa fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; <span id="year"></span> SYSTEM.NIMA_MOSLEMY // ALL RIGHTS SECURED.</p>
+                    <p>Last Sync: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
-</html> 
+</html>
