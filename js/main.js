@@ -88,10 +88,44 @@ document.addEventListener('DOMContentLoaded', function() {
     // ----------------------------------------------------
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            alert('SYSTEM MSG: Communication Protocol Initiated. Payload sent successfully.');
-            contactForm.reset();
+            
+            const formAction = contactForm.getAttribute('action');
+            
+            if (formAction && formAction.includes("YOUR_FORMSPREE_ID")) {
+                alert("SYSTEM MSG: Please create a free account at formspree.io and update the 'YOUR_FORMSPREE_ID' in index.html form action attribute with your actual endpoint to enable email sending.");
+                return;
+            }
+
+            const formData = new FormData(contactForm);
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            try {
+                submitBtn.innerHTML = 'Sending... <i class="fa fa-spinner fa-spin"></i>';
+                submitBtn.disabled = true;
+
+                const response = await fetch(formAction, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Thanks for your message! I will get back to you ASAP.');
+                    contactForm.reset();
+                } else {
+                    alert('SYSTEM ERROR: Payload delivery failed. Please verify your Formspree setup.');
+                }
+            } catch (error) {
+                alert('SYSTEM ERROR: Connection failed.');
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
     }
 
@@ -109,11 +143,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Settings
         const config = {
-            particleColor: 'rgba(0, 229, 255, 0.4)',
-            lineColor: 'rgba(0, 229, 255, 0.15)',
-            particleRadius: 1.5,
-            lineDistance: 120,
-            baseSpeed: 0.3
+            particleColor: 'rgba(197, 160, 89, 0.4)',
+            lineColor: 'rgba(197, 160, 89, 0.15)',
+            particleRadius: 2.5,
+            lineDistance: 140,
+            baseSpeed: 0.15
         };
 
         let mouse = { x: null, y: null, radius: 150 };
@@ -202,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     if (distance < config.lineDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 229, 255, ${0.2 - distance/config.lineDistance * 0.2})`;
+                        ctx.strokeStyle = `rgba(197, 160, 89, ${0.2 - distance/config.lineDistance * 0.2})`;
                         ctx.lineWidth = 1;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
