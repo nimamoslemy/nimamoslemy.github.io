@@ -1,6 +1,77 @@
 // Main JavaScript for Interactions and Lattice Canvas
 document.addEventListener('DOMContentLoaded', function() {
     // ----------------------------------------------------
+    // STARTUP BOOT SEQUENCE (ICON TRANSITION)
+    // ----------------------------------------------------
+    const startupOverlay = document.getElementById('startup-overlay');
+    const iconTransitionContainer = document.getElementById('icon-transition-container');
+    const progressBar = document.getElementById('startup-progress-bar');
+    
+    if (startupOverlay && iconTransitionContainer) {
+        // Prevent scrolling while booting
+        document.body.style.overflow = 'hidden';
+        window.scrollTo(0, 0);
+        
+        const bootSequence = [
+            { type: 'icon', content: "fa-book" },        // Book
+            { type: 'icon', content: "fa-microscope" },  // Lab icon
+            { type: 'icon', content: "fa-cubes" },       // 3D printing
+            { type: 'icon', content: "fa-cogs" },        // Mechanical stuff
+            { type: 'image', content: "my%20pic.jpeg" }  // User image
+        ];
+
+        let delaySum = 300; // Initial delay
+        const stepDuration = 1200; // Matches CSS animation
+        
+        bootSequence.forEach((step, index) => {
+            setTimeout(() => {
+                iconTransitionContainer.innerHTML = ''; // clear previous
+                
+                let elem;
+                if (step.type === 'icon') {
+                    elem = document.createElement('i');
+                    elem.className = `fa ${step.content} transition-element`;
+                } else if (step.type === 'image') {
+                    elem = document.createElement('div');
+                    elem.className = 'transition-element transition-image-wrapper';
+                    
+                    const img = document.createElement('img');
+                    img.src = step.content;
+                    img.className = 'transition-image';
+                    
+                    const name = document.createElement('h1');
+                    name.textContent = 'NIMA MOSLEMY';
+                    name.className = 'transition-name';
+                    
+                    elem.appendChild(img);
+                    elem.appendChild(name);
+                }
+                
+                iconTransitionContainer.appendChild(elem);
+                
+                // Update progress bar
+                if (progressBar) {
+                    progressBar.style.width = `${((index + 1) / bootSequence.length) * 100}%`;
+                }
+                
+                // End sequence
+                if (index === bootSequence.length - 1) {
+                    setTimeout(() => {
+                        startupOverlay.classList.add('hidden');
+                        document.body.style.overflow = ''; // Restore scrolling
+                        
+                        // Remove from DOM eventually
+                        setTimeout(() => {
+                            startupOverlay.remove();
+                        }, 1000);
+                    }, stepDuration);
+                }
+            }, delaySum);
+            delaySum += stepDuration - 100; // slight overlap
+        });
+    }
+
+    // ----------------------------------------------------
     // SYSTEM DATE & TIME
     // ----------------------------------------------------
     document.getElementById('year').textContent = new Date().getFullYear();
