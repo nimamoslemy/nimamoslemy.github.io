@@ -49,6 +49,27 @@ body {
     z-index: 1;
 }
 
+/* Accessibility: Skip Link */
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 15px;
+    z-index: 10000;
+    background: var(--bg-dark);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 10px 20px;
+    font-family: var(--font-tech);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 15px;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-tech);

@@ -85,9 +85,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
     
     if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
+        const toggleMenu = function() {
             navMenu.classList.toggle('active');
             menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
         });
     }
     
@@ -95,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!event.target.closest('.nav-menu') && !event.target.closest('.menu-toggle') && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
             menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
         }
     });
 
@@ -113,8 +123,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             }
-            
+
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
             
