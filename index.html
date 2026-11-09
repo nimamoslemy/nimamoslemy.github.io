@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nima Moslemy | PhD Researcher in Additive Manufacturing</title>
-    <meta name="description" content="Nima Moslemy is a PhD researcher at Heriot-Watt University working on laser powder bed fusion (LPBF), lattice structures, FEA, and machine learning for defect detection in additive manufacturing.">
-    <meta name="keywords" content="Nima Moslemy, Additive Manufacturing, LPBF, Lattice Structures, Mechanical Simulation, FEA, Machine Learning, Deep Learning, Defect Detection, Heriot-Watt University, Biomedical Engineering">
+    <title>Nima Moslemy | PhD Researcher in Additive Manufacturing, AI &amp; Open-Source Engineering</title>
+    <meta name="description" content="Nima Moslemy is a PhD researcher at Heriot-Watt University working on laser powder bed fusion (LPBF), lattice structures, FEA, machine learning for defect detection in additive manufacturing, and open-source AI software (FERDOWSI v2, ModernTimer).">
+    <meta name="keywords" content="Nima Moslemy, Additive Manufacturing, LPBF, Lattice Structures, Mechanical Simulation, FEA, Machine Learning, Deep Learning, Defect Detection, FERDOWSI, Heriot-Watt University, Biomedical Engineering">
     <meta name="author" content="Nima Moslemy">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nimamoslemy.github.io/">
 
     <!-- Open Graph / Social Preview -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Nima Moslemy | PhD Researcher in Additive Manufacturing">
-    <meta property="og:description" content="PhD researcher at Heriot-Watt University working on LPBF, lattice structures, FEA, and machine learning for defect detection in additive manufacturing.">
+    <meta property="og:title" content="Nima Moslemy | PhD Researcher in Additive Manufacturing, AI &amp; Software">
+    <meta property="og:description" content="PhD researcher at Heriot-Watt University working on LPBF, lattice structures, FEA, machine learning for defect detection in additive manufacturing, and open-source AI software.">
     <meta property="og:url" content="https://nimamoslemy.github.io/">
     <meta property="og:image" content="https://nimamoslemy.github.io/images/profile.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nima Moslemy | PhD Researcher in Additive Manufacturing">
-    <meta name="twitter:description" content="PhD researcher at Heriot-Watt University working on LPBF, lattice structures, FEA, and machine learning for defect detection in additive manufacturing.">
+    <meta name="twitter:title" content="Nima Moslemy | PhD Researcher in Additive Manufacturing, AI &amp; Software">
+    <meta name="twitter:description" content="PhD researcher at Heriot-Watt University working on LPBF, lattice structures, FEA, machine learning for defect detection in additive manufacturing, and open-source AI software.">
     <meta name="twitter:image" content="https://nimamoslemy.github.io/images/profile.jpg">
 
-    <meta name="theme-color" content="#0c0d0e">
+    <meta name="theme-color" content="#07090e">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
     {
@@ -44,6 +44,7 @@
         "url": "https://nimamoslemy.github.io/",
         "image": "https://nimamoslemy.github.io/images/profile.jpg",
         "sameAs": [
+            "https://github.com/nimamoslemy",
             "https://www.linkedin.com/in/nimamoslemy/",
             "https://scholar.google.com/citations?user=oj20_dkAAAAJ&hl=en",
             "https://www.researchgate.net/profile/Nima-Moslemy"
@@ -52,8 +53,6 @@
     </script>
 </head>
 <body>
- 
-
     <!-- Startup Sequence Overlay -->
     <div id="startup-overlay">
         <div class="startup-content">
@@ -63,29 +62,31 @@
             <div class="startup-progress">
                 <div class="progress-bar" id="startup-progress-bar"></div>
             </div>
+            <button id="skip-intro-btn" class="skip-intro-btn" type="button">Skip Intro <i class="fas fa-forward"></i></button>
         </div>
     </div>
 
     <!-- Dynamic Lattice Canvas -->
     <canvas id="lattice-canvas"></canvas>
-    
+
     <div class="site-wrapper">
         <header>
             <div class="container">
                 <nav>
-                    <div class="logo">
-                        <span class="logo-mark"><i class="fa fa-cubes"></i></span> 
+                    <a href="#home" class="logo">
+                        <span class="logo-mark"><i class="fa fa-cubes"></i></span>
                         <span class="logo-text">N. Moslemy</span>
-                    </div>
+                    </a>
                     <div class="menu-toggle" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
                         <i class="fas fa-bars"></i>
                     </div>
                     <ul class="nav-menu">
                         <li><a href="#home" class="active">Home</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#software">Software &amp; AI</a></li>
                         <li><a href="#resume">Experience</a></li>
                         <li><a href="#publications">Publications</a></li>
-                        <li><a href="#projects">Posts</a></li>
+                        <li><a href="#projects">Research Posts</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -93,311 +94,582 @@
         </header>
 
         <main id="main-content">
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content glass-panel">
-                    <div class="top-tag">PORTFOLIO</div>
-                    <h1>NIMA MOSLEMY</h1>
-                    <h2>PhD Researcher | Additive Manufacturing (LPBF) • Lattice Structures • Mechanical Simulation • FEA • Machine Learning & Deep Learning for Defect Detection </h2>
-                    <p>School of Engineering and Physical Sciences<br>Heriot-Watt University</p>
-                    <div class="social-links">
-                        <a href="mailto:nm4015@hw.ac.uk" target="_blank" rel="noopener noreferrer" aria-label="Email Nima Moslemy"><i class="fas fa-envelope"></i></a>
-                        <a href="https://www.linkedin.com/in/nimamoslemy/?originalSubdomain=ir" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://scholar.google.com/citations?user=oj20_dkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="https://www.researchgate.net/profile/Nima-Moslemy" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile"><i class="fab fa-researchgate"></i></a>
-                    </div>
-                    <a href="#contact" class="btn btn-primary">Contact Me</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <div class="section-header">
-                    <div class="hex-icon"><i class="fa fa-user"></i></div>
-                    <h2 class="section-title">About Me</h2>
-                </div>
-                <div class="about-content glass-panel">
-                    <div class="about-image">
-                        <div class="img-frame">
-                            <img src="my%20pic.jpeg" alt="Nima Moslemy">
-                        </div>
-                    </div>
-                    <div class="about-text">
-                        <p>Greetings, I am Nima Moslemy, a professional with expertise in Mechanical Engineering and Additive Manufacturing. I am dedicated to advancing science and technology within this field and continuously seek opportunities to contribute to its growth and innovation.</p>
-                        <p>I am currently a post-graduate researcher at Heriot-Watt University, working on a project funded by the EPSRC.</p>
-                        <div class="about-details">
-                            <div class="detail-item">
-                                <h3><i class="fa fa-microscope"></i> Research Interests</h3>
-                                <ul>
-                                    <li>Additive Manufacturing</li>
-                                    <li>3D Printing Technologies</li>
-                                    <li>Metal AM Processes</li>
-                                    <li>Meta-Materials</li>
-                                    <li>Biomedical Engineering</li>
-                                </ul>
+            <!-- HERO SECTION -->
+            <section id="home" class="hero">
+                <div class="container">
+                    <div class="hero-grid">
+                        <div class="hero-content glass-panel spotlight-card">
+                            <div class="status-pill">
+                                <span class="status-dot"></span>
+                                <span>EPSRC PhD Researcher · Heriot-Watt University, Edinburgh</span>
                             </div>
-                            <div class="detail-item">
-                                <h3><i class="fa fa-cogs"></i> Core Expertise</h3>
-                                <ul>
-                                    <li>Artificial Intelligence</li>
-                                    <li>Machine Learning</li>
-                                    <li>Mechanical Engineering</li>
-                                    <li>Materials Science</li>
-                                    <li>Biomechanics</li>
-                                </ul>
+                            <h1>NIMA MOSLEMY</h1>
+                            <h2 class="hero-subtitle">
+                                Additive Manufacturing (LPBF) <span class="sep">•</span> Lattice Metamaterials <span class="sep">•</span> Mechanical Simulation &amp; FEA <span class="sep">•</span> AI &amp; Open-Source Software
+                            </h2>
+                            <p class="hero-affiliation">
+                                <i class="fas fa-university"></i> School of Engineering and Physical Sciences, Heriot-Watt University, UK
+                            </p>
+
+                            <div class="social-links">
+                                <a href="https://github.com/nimamoslemy" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/nimamoslemy/?originalSubdomain=ir" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://scholar.google.com/citations?user=oj20_dkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                                <a href="https://www.researchgate.net/profile/Nima-Moslemy" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                                <a href="mailto:nm4015@hw.ac.uk" aria-label="Email Nima Moslemy" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+
+                            <div class="hero-cta-row">
+                                <a href="#software" class="btn btn-primary"><i class="fas fa-rocket"></i> Explore Software &amp; AI</a>
+                                <a href="#publications" class="btn btn-secondary"><i class="fas fa-book-open"></i> Publications</a>
+                                <a href="#contact" class="btn btn-outline">Contact Me</a>
                             </div>
                         </div>
+
+                        <!-- Bento Metrics Grid -->
+                        <div class="hero-stats-grid">
+                            <div class="stat-card glass-panel spotlight-card">
+                                <div class="stat-icon"><i class="fas fa-cubes"></i></div>
+                                <div class="stat-number">600+</div>
+                                <div class="stat-label">Patient-Specific Prostheses</div>
+                                <div class="stat-sub">SLM · PolyJet · DLP · FDM</div>
+                            </div>
+                            <div class="stat-card glass-panel spotlight-card accent-emerald">
+                                <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                                <div class="stat-number">v2.0</div>
+                                <div class="stat-label">FERDOWSI AI Assistant</div>
+                                <div class="stat-sub">C++20 · C# WPF · Python · AI</div>
+                            </div>
+                            <div class="stat-card glass-panel spotlight-card">
+                                <div class="stat-icon"><i class="fas fa-brain"></i></div>
+                                <div class="stat-number">LPBF-AI</div>
+                                <div class="stat-label">Defect Detection &amp; FEA</div>
+                                <div class="stat-sub">Deep Learning · Computer Vision</div>
+                            </div>
+                            <div class="stat-card glass-panel spotlight-card">
+                                <div class="stat-icon"><i class="fas fa-award"></i></div>
+                                <div class="stat-number">EPSRC</div>
+                                <div class="stat-label">Doctoral Research</div>
+                                <div class="stat-sub">Heriot-Watt University, UK</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="resume" class="resume">
-            <div class="container">
-                <div class="section-header">
-                    <div class="hex-icon"><i class="fa fa-briefcase"></i></div>
-                    <h2 class="section-title">Experience & Education</h2>
-                </div>
-                <div class="resume-content">
-                    <div class="resume-section glass-panel">
-                        <h3><i class="fa fa-cogs"></i> Professional Experience</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-node"></div>
-                                <div class="timeline-date">Jan 2025 - Present</div>
-                                <div class="timeline-content">
-                                    <h4>Post-graduate Researcher</h4>
-                                    <p>Heriot-Watt University, Edinburgh, UK</p>
+            <!-- ABOUT SECTION -->
+            <section id="about" class="about">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="hex-icon"><i class="fa fa-user"></i></div>
+                        <div>
+                            <span class="section-eyebrow">PROFILE &amp; RESEARCH VISION</span>
+                            <h2 class="section-title">About Me</h2>
+                        </div>
+                    </div>
+                    <div class="about-content glass-panel spotlight-card">
+                        <div class="about-image">
+                            <div class="img-frame">
+                                <img src="my%20pic.jpeg" alt="Nima Moslemy">
+                            </div>
+                            <div class="about-quick-badges">
+                                <span class="mini-badge"><i class="fas fa-map-marker-alt"></i> Edinburgh, UK</span>
+                                <span class="mini-badge"><i class="fas fa-flask"></i> Additive Manufacturing &amp; AI</span>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <p class="lead-paragraph">
+                                Greetings — I am <strong>Nima Moslemy</strong>, a PhD Researcher in Mechanical Engineering and Additive Manufacturing at <strong>Heriot-Watt University</strong>, working on an <strong>EPSRC-funded research programme</strong>.
+                            </p>
+                            <p>
+                                My work bridges physical engineering and intelligent software: combining <strong>Laser Powder Bed Fusion (LPBF)</strong>, <strong>architected lattice metamaterials</strong>, and <strong>finite element simulation (FEA)</strong> with <strong>machine learning for in-situ defect detection</strong> and high-performance desktop AI applications.
+                            </p>
+                            <div class="about-details">
+                                <div class="detail-item">
+                                    <h3><i class="fa fa-microscope"></i> Research Interests</h3>
                                     <ul>
-                                        <li>Teaching Assistant for Design and Manufacture course</li>
+                                        <li>Metal Additive Manufacturing (LPBF / SLM)</li>
+                                        <li>Architected Lattice Structures &amp; Metamaterials</li>
+                                        <li>Finite Element Analysis &amp; Multi-Physics Simulation</li>
+                                        <li>Biomedical Engineering &amp; 3D Bioprinting</li>
+                                        <li>Patient-Specific Implants &amp; Prostheses</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-item">
+                                    <h3><i class="fa fa-cogs"></i> Core Expertise</h3>
+                                    <ul>
+                                        <li>AI &amp; Deep Learning for Defect Detection</li>
+                                        <li>Native Systems &amp; AI Software (Python, C++20, C#)</li>
+                                        <li>Mechanical &amp; Biomechanical Characterization</li>
+                                        <li>CAD / Implicit Modeling (nTopology, SolidWorks)</li>
+                                        <li>Medical Image Processing (Materialise Mimics/Magics)</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="timeline-item">
-                                <div class="timeline-node"></div>
-                                <div class="timeline-date">Sep 2021 - Dec 2024</div>
-                                <div class="timeline-content">
-                                    <h4>Research Assistant</h4>
-                                    <p>Bio Fabrication Lab (BFL), Amirkabir University of Technology, Iran</p>
-                                    <ul>
-                                        <li>Teaching Assistant for Strength of Material (II) and 3D Printing</li>
-                                        <li>Conducted research on edible scaffolds and bioprinting</li>
-                                    </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OPEN-SOURCE & AI SOFTWARE SECTION (FEATURED) -->
+            <section id="software" class="software">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="hex-icon"><i class="fa fa-laptop-code"></i></div>
+                        <div>
+                            <span class="section-eyebrow">OPEN-SOURCE ENGINEERING &amp; AI TOOLS</span>
+                            <h2 class="section-title">Featured Software &amp; GitHub Projects</h2>
+                        </div>
+                    </div>
+
+                    <!-- Flagship Bento Card: FERDOWSI v2 -->
+                    <div class="flagship-card glass-panel spotlight-card">
+                        <div class="flagship-grid">
+                            <div class="flagship-info">
+                                <div class="flagship-badges">
+                                    <span class="badge-pill badge-emerald"><i class="fas fa-bolt"></i> NEW RELEASE · v2.0.0</span>
+                                    <span class="badge-pill badge-gold"><i class="fab fa-windows"></i> Windows 10 / 11 (x64)</span>
+                                    <span class="badge-pill badge-slate"><i class="fas fa-shield-alt"></i> MIT Open Source</span>
+                                </div>
+                                <h3 class="flagship-title">
+                                    <a href="https://github.com/nimamoslemy/FERDOWSI" target="_blank" rel="noopener noreferrer">FERDOWSI v2</a>
+                                    <span class="flagship-subtitle">— Above-Cursor AI Writing Assistant, Voice Dictation, Read Aloud &amp; Bilingual Dictionary</span>
+                                </h3>
+                                <p class="flagship-desc">
+                                    A high-performance, system-wide Windows desktop AI writing and voice assistant engineered with a tri-language architecture (<strong>C++20 Win32/MSAA Hook DLL</strong> + <strong>C# WPF Non-Activating UIA Overlay</strong> + <strong>Python 3 AI Engine</strong>). Summons directly above your cursor in any Windows app (Edge, Chrome, Word, Notepad, Telegram, VS Code) with sub-second cloud and local inference.
+                                </p>
+
+                                <div class="feature-highlights-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>English, Persian &amp; Finglish Fix</strong>
+                                            <span>Real-time grammar, spelling, ZWNJ half-space &amp; Finglish-to-Persian conversion.</span>
+                                        </div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-microphone-alt"></i>
+                                        <div>
+                                            <strong>Voice Dictation (Clean &amp; Exact)</strong>
+                                            <span>Groq Whisper &amp; Deepgram STT in English, Persian, or Mixed mode — cleans fillers without ever replying like a chatbot.</span>
+                                        </div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-volume-up"></i>
+                                        <div>
+                                            <strong>Neural Read Aloud (TTS)</strong>
+                                            <span>Instant speech synthesis via Google Gemini Audio, Deepgram Aura, Voice AI &amp; SAPI.</span>
+                                        </div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-wand-magic-sparkles"></i>
+                                        <div>
+                                            <strong>Custom Reword &amp; AI Dictionary</strong>
+                                            <span>6 tones, 12 formatters, custom user prompt instructions, plus Synonyms, Antonyms &amp; Persian dictionary.</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="project-tags">
+                                    <span class="tag tag-emerald">C++20</span>
+                                    <span class="tag tag-emerald">C# / WPF</span>
+                                    <span class="tag tag-emerald">Python 3</span>
+                                    <span class="tag">Google Gemini API</span>
+                                    <span class="tag">DeepSeek API</span>
+                                    <span class="tag">Groq Whisper</span>
+                                    <span class="tag">Deepgram Aura</span>
+                                    <span class="tag">Copilot+ NPU</span>
+                                </div>
+
+                                <div class="flagship-actions">
+                                    <a href="https://github.com/nimamoslemy/FERDOWSI/releases/download/v2.0.0/FERDOWSI_Installer_v2.0.0_x64.zip" class="btn btn-emerald" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-download"></i> Download Installer (.zip)
+                                    </a>
+                                    <a href="https://github.com/nimamoslemy/FERDOWSI/releases/download/v2.0.0/FERDOWSI_Portable_v2.0.0_x64.zip" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-box-open"></i> Portable (.zip)
+                                    </a>
+                                    <a href="https://github.com/nimamoslemy/FERDOWSI/releases/download/v2.0.0/FERDOWSI_Help_Guide.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-file-pdf"></i> Help Guide (PDF)
+                                    </a>
+                                    <a href="https://github.com/nimamoslemy/FERDOWSI" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-github"></i> GitHub Repository
+                                    </a>
                                 </div>
                             </div>
-                            <div class="timeline-item">
-                                <div class="timeline-node"></div>
-                                <div class="timeline-date">Sep 2021 - Sep 2022</div>
-                                <div class="timeline-content">
-                                    <h4>Head of Manufacturing Department</h4>
-                                    <p>CMFRC, Shariati's Hospital, Tehran, Iran</p>
-                                    <ul>
-                                        <li>Designed over 600 specific prostheses (SLM, PolyJet, DLP, FDM)</li>
-                                        <li>Device infrastructure optimization</li>
-                                    </ul>
+
+                            <!-- Interactive UI Mockup Preview of FERDOWSI v2 -->
+                            <div class="flagship-preview">
+                                <div class="ferdowsi-mockup">
+                                    <div class="mockup-pill-bar">
+                                        <span class="mock-icon-btn">🎤</span>
+                                        <span class="mock-icon-btn">🔊</span>
+                                        <span class="mock-badge-err">3</span>
+                                        <span class="mock-summary">cannot · will remain · deletes</span>
+                                        <span class="mock-fix-btn">Fix ✨</span>
+                                        <span class="mock-close">×</span>
+                                    </div>
+                                    <div class="mockup-card-window">
+                                        <div class="mockup-card-header">
+                                            <div class="mock-brand">
+                                                <span class="mock-f-logo">F</span>
+                                                <span class="mock-title">FERDOWSI v2</span>
+                                                <span class="mock-engine-pill">Gemini 3.1 Flash-Lite · 0.4s</span>
+                                            </div>
+                                            <div class="mock-header-icons">
+                                                <span>🎤</span><span>🔊</span><span>?</span><span>⚙</span>
+                                            </div>
+                                        </div>
+                                        <div class="mockup-tabs">
+                                            <span class="mock-tab active">✓ Correct</span>
+                                            <span class="mock-tab">✨ Reword</span>
+                                            <span class="mock-tab">Aa Format</span>
+                                            <span class="mock-tab">📖 Dictionary</span>
+                                        </div>
+                                        <div class="mockup-body">
+                                            <div class="mock-custom-box">
+                                                <span class="mock-custom-label">✨ Custom Format / Reword Instruction:</span>
+                                                <div class="mock-custom-input-row">
+                                                    <span class="mock-input-text">Rewrite as a concise executive summary...</span>
+                                                    <span class="mock-apply-btn">Apply ✨</span>
+                                                </div>
+                                            </div>
+                                            <div class="mock-shortcuts-row">
+                                                <span class="mock-key">Alt+G : Card</span>
+                                                <span class="mock-key">Alt+V : Voice 🎤</span>
+                                                <span class="mock-key">Alt+R : Read 🔊</span>
+                                                <span class="mock-key">Alt+Q : Fix ✨</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="resume-section glass-panel">
-                        <h3><i class="fa fa-graduation-cap"></i> Academic Training</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-node"></div>
-                                <div class="timeline-date">Jan 2025 - Dec 2028</div>
-                                <div class="timeline-content">
-                                    <h4>PhD in Mechanical Engineering</h4>
-                                    <p>Heriot-Watt University, Edinburgh, UK</p>
-                                    <p class="supervisors">Supervisors: Dr. F. Shalchy, Dr. A. Ozel, Dr. M. Ikhlaq</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-node"></div>
-                                <div class="timeline-date">Sep 2021 - Dec 2023</div>
-                                <div class="timeline-content">
-                                    <h4>MSc in Biomechanical Engineering</h4>
-                                    <p>Amirkabir University of Technology</p>
-                                    <p class="thesis">"Design and fabrication of edible scaffolding for use in cultured meat by 3D bioprinting."</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-node"></div>
-                                <div class="timeline-date">Sep 2017 - Sep 2021</div>
-                                <div class="timeline-content">
-                                    <h4>BSc in Biomechanical Engineering</h4>
-                                    <p>Amirkabir University of Technology</p>
-                                    <p class="thesis">"Design and manufacture of RTV-2 silicone 3D printer."</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="resume-section glass-panel">
-                        <h3><i class="fa fa-wrench"></i> Technical Skills</h3>
-                        <div class="skills-container">
-                            <div class="skill-category">
-                                <h4>Manufacturing & Hardware</h4>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 95%;"><span>3D Printing (SLM, PolyJet, FDM)</span></div></div>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 85%;"><span>Surface & Mech Testing</span></div></div>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 80%;"><span>Cell Culture & Bioprinting</span></div></div>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Software & Simulation</h4>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 90%;"><span>Python, C, MATLAB</span></div></div>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 85%;"><span>Materialise (Mimics, Magics)</span></div></div>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 90%;"><span>Solidworks, nTopology, Abaqus</span></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="publications" class="publications">
-            <div class="container">
-                <div class="section-header">
-                    <div class="hex-icon"><i class="fa fa-book"></i></div>
-                    <h2 class="section-title">Publications</h2>
-                </div>
-                <div class="publications-content">
-                    <div class="publication-list glass-panel">
-                        <div class="publication-item">
-                            <div class="publication-year">[2025]</div>
-                            <div class="publication-details">
-                                <h3>Role of artificial intelligence in data-centric additive manufacturing processes for biomedical applications</h3>
-                                <p class="authors">Mohammadnabi, S., <strong>Moslemy, N.</strong>, Taghvaei, H., Zia, A.W., Askarinejad, S., Shalchy, F.</p>
-                                <p class="journal">Journal of the Mechanical Behavior of Biomedical Materials, Volume 166, June 2025</p>
-                                <div class="publication-links">
-                                    <a href="https://doi.org/10.1016/j.jmbbm.2025.106949" class="btn-outline" target="_blank" rel="noopener noreferrer">DOI Link</a>
-                                </div>
+                    <!-- Secondary Software Projects Grid -->
+                    <div class="software-subgrid">
+                        <!-- LPBF Defect Detection -->
+                        <div class="software-card glass-panel spotlight-card">
+                            <div class="software-card-top">
+                                <div class="software-icon"><i class="fas fa-microscope"></i></div>
+                                <span class="badge-pill badge-gold">AI &amp; ADDITIVE MANUFACTURING</span>
                             </div>
-                        </div>
-
-                        <div class="publication-item">
-                            <div class="publication-year">[2024]</div>
-                            <div class="publication-details">
-                                <h3>Development of an Edible Scaffold Utilizing Isolated Soy Protein for Sustainable Cultured Meat Production through 3D Bioprinting</h3>
-                                <p class="authors"><strong>Moslemy, N.</strong>, Taffazoli, M., Abolfathi, N.</p>
-                                <p class="journal">[Under Review]</p>
-                            </div>
-                        </div>
-
-                        <div class="publication-item">
-                            <div class="publication-year">[2023]</div>
-                            <div class="publication-details">
-                                <h3>Review in Edible Materials for Sustainable Cultured Meat: Scaffolds and Microcarriers Production</h3>
-                                <p class="authors"><strong>Moslemy, N.</strong>, Sharifi, E., Asadi-Eydivand, M., Abolfathi, N.</p>
-                                <p class="journal">International Journal of Food Science and Technology</p>
-                                <div class="publication-links">
-                                    <a href="https://doi.org/10.1111/ijfs.16703" class="btn-outline" target="_blank" rel="noopener noreferrer">DOI Link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="container">
-                <div class="section-header">
-                    <div class="hex-icon"><i class="fa fa-folder-open"></i></div>
-                    <h2 class="section-title">Posts</h2>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card glass-panel">
-                        <div class="project-image">
-                            <div class="tech-overlay"></div>
-                            <img src="images/AMinAI.jpeg" alt="AM Research">
-                        </div>
-                        <div class="project-content">
-                            <h3>AI in Additive Manufacturing</h3>
-                            <p>Review of Artificial Intelligence in Data-Centric Additive Manufacturing Processes for Biomedical Applications.</p>
+                            <h3><a href="https://github.com/nimamoslemy/LPBF-Defect-Detection" target="_blank" rel="noopener noreferrer">LPBF Defect Detection</a></h3>
+                            <p>
+                                Machine learning models, computer vision pipelines, and simulation-based quality assurance tools for detecting anomalies and defects in 3D-printed metal components produced by Laser Powder Bed Fusion (LPBF).
+                            </p>
                             <div class="project-tags">
-                                <span class="tag">AI</span>
-                                <span class="tag">AM</span>
-                                <span class="tag">Biomedical</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Deep Learning</span>
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">LPBF Metal AM</span>
+                                <span class="tag">Quality Assurance</span>
                             </div>
-                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7300262521549066242/" class="btn-outline" target="_blank" rel="noopener noreferrer">View Post</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card glass-panel">
-                        <div class="project-image">
-                            <div class="tech-overlay"></div>
-                            <img src="images/meat.jpeg" alt="Cultured meat">
-                        </div>
-                        <div class="project-content">
-                            <h3>Sustainable Cultured Meat</h3>
-                            <p>Development of edible scaffolds and microcarriers focusing on bio-materials and their advanced applications.</p>
-                            <div class="project-tags">
-                                <span class="tag">Scaffolds</span>
-                                <span class="tag">Microcarriers</span>
-                                <span class="tag">Bio</span>
+                            <div class="software-card-actions">
+                                <a href="https://github.com/nimamoslemy/LPBF-Defect-Detection" class="btn-outline" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> View Repository
+                                </a>
                             </div>
-                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7105873171978801154/" class="btn-outline" target="_blank" rel="noopener noreferrer">View Post</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="section-header">
-                    <div class="hex-icon"><i class="fa fa-envelope"></i></div>
-                    <h2 class="section-title">Contact Me</h2>
-                </div>
-                <div class="contact-content glass-panel">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fa fa-at"></i>
-                            <h3>Email</h3>
-                            <p><a href="mailto:nm4015@hw.ac.uk" class="glow-text">nm4015@hw.ac.uk</a></p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fa fa-map-marker-alt"></i>
-                            <h3>Location</h3>
-                            <p>Heriot-Watt University<br>Edinburgh, UK</p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fa fa-phone"></i>
-                            <h3>Phone</h3>
-                            <p><a href="tel:+447877667926" class="glow-text">+44 7877667926</a></p>
+                        <!-- ModernTimer -->
+                        <div class="software-card glass-panel spotlight-card">
+                            <div class="software-card-top">
+                                <div class="software-icon"><i class="fas fa-stopwatch"></i></div>
+                                <span class="badge-pill badge-slate">C++ &amp; DIRECT2D UTILITY</span>
+                            </div>
+                            <h3><a href="https://github.com/nimamoslemy/ModernTimer" target="_blank" rel="noopener noreferrer">ModernTimer for Windows</a></h3>
+                            <p>
+                                A modern, ultra-lightweight portable timer and stopwatch for Windows built in C++ with Direct2D hardware-accelerated rendering. Single small executable with progress ring, compact, bar, and full-screen modes.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">Direct2D</span>
+                                <span class="tag">Win32 API</span>
+                                <span class="tag">Portable Utility</span>
+                            </div>
+                            <div class="software-card-actions">
+                                <a href="https://github.com/nimamoslemy/ModernTimer/releases/latest" class="btn-outline" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-download"></i> Download Latest
+                                </a>
+                                <a href="https://github.com/nimamoslemy/ModernTimer" class="btn-outline" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> View Repository
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-form">
-                        <form id="contactForm" action="https://formspree.io/f/mnjlnodq" method="POST">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required placeholder="Enter Your Name">
+                </div>
+            </section>
+
+            <!-- EXPERIENCE & EDUCATION SECTION -->
+            <section id="resume" class="resume">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="hex-icon"><i class="fa fa-briefcase"></i></div>
+                        <div>
+                            <span class="section-eyebrow">ACADEMIC &amp; INDUSTRY TRACK RECORD</span>
+                            <h2 class="section-title">Experience &amp; Education</h2>
+                        </div>
+                    </div>
+                    <div class="resume-content">
+                        <div class="resume-two-col">
+                            <div class="resume-section glass-panel spotlight-card">
+                                <h3><i class="fa fa-cogs"></i> Professional Experience</h3>
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-node"></div>
+                                        <div class="timeline-date">Jan 2025 - Present</div>
+                                        <div class="timeline-content">
+                                            <h4>Postgraduate Researcher</h4>
+                                            <p>Heriot-Watt University, Edinburgh, UK</p>
+                                            <ul>
+                                                <li>EPSRC Doctoral Researcher in LPBF Additive Manufacturing, Lattice Structures &amp; AI Defect Detection</li>
+                                                <li>Teaching Assistant for Design and Manufacture course</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-node"></div>
+                                        <div class="timeline-date">Sep 2021 - Dec 2024</div>
+                                        <div class="timeline-content">
+                                            <h4>Research Assistant</h4>
+                                            <p>Bio Fabrication Lab (BFL), Amirkabir University of Technology</p>
+                                            <ul>
+                                                <li>Teaching Assistant for Strength of Materials (II) and 3D Printing</li>
+                                                <li>Conducted research on edible scaffolds and 3D bioprinting</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-node"></div>
+                                        <div class="timeline-date">Sep 2021 - Sep 2022</div>
+                                        <div class="timeline-content">
+                                            <h4>Head of Manufacturing Department</h4>
+                                            <p>CMFRC, Shariati Hospital, Tehran</p>
+                                            <ul>
+                                                <li>Designed and manufactured over 600 patient-specific prostheses (SLM, PolyJet, DLP, FDM)</li>
+                                                <li>Led clinical AM device workflow and infrastructure optimization</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required placeholder="Enter Your Email">
+
+                            <div class="resume-section glass-panel spotlight-card">
+                                <h3><i class="fa fa-graduation-cap"></i> Academic Education</h3>
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-node"></div>
+                                        <div class="timeline-date">Jan 2025 - Dec 2028</div>
+                                        <div class="timeline-content">
+                                            <h4>PhD in Mechanical Engineering</h4>
+                                            <p>Heriot-Watt University, Edinburgh, UK</p>
+                                            <p class="supervisors">Supervisors: Dr. F. Shalchy, Dr. A. Ozel, Dr. M. Ikhlaq</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-node"></div>
+                                        <div class="timeline-date">Sep 2021 - Dec 2023</div>
+                                        <div class="timeline-content">
+                                            <h4>MSc in Biomechanical Engineering</h4>
+                                            <p>Amirkabir University of Technology (Tehran Polytechnic)</p>
+                                            <p class="thesis">"Design and fabrication of edible scaffolding for use in cultured meat by 3D bioprinting."</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-node"></div>
+                                        <div class="timeline-date">Sep 2017 - Sep 2021</div>
+                                        <div class="timeline-content">
+                                            <h4>BSc in Biomechanical Engineering</h4>
+                                            <p>Amirkabir University of Technology (Tehran Polytechnic)</p>
+                                            <p class="thesis">"Design and manufacture of RTV-2 silicone 3D printer."</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required placeholder="Message Subject">
+                        </div>
+
+                        <div class="resume-section glass-panel spotlight-card">
+                            <h3><i class="fa fa-wrench"></i> Technical Arsenal</h3>
+                            <div class="skills-container">
+                                <div class="skill-category">
+                                    <h4>Manufacturing &amp; Experimental</h4>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 95%;"><span>Additive Manufacturing (LPBF / SLM, PolyJet, DLP, FDM)</span></div></div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 88%;"><span>Mechanical &amp; Surface Characterization</span></div></div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 82%;"><span>Bioprinting, Biomaterials &amp; Cell Culture</span></div></div>
+                                </div>
+                                <div class="skill-category">
+                                    <h4>AI, Programming &amp; Simulation</h4>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 92%;"><span>Python, C++20, C# (.NET WPF), MATLAB</span></div></div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 90%;"><span>SolidWorks, nTopology, Abaqus FEA</span></div></div>
+                                    <div class="skill-bar"><div class="skill-fill" style="width: 86%;"><span>Materialise Mimics &amp; Magics · Machine Learning</span></div></div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Your Message..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message <i class="fa fa-paper-plane"></i></button>
-                        </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- PUBLICATIONS SECTION -->
+            <section id="publications" class="publications">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="hex-icon"><i class="fa fa-book"></i></div>
+                        <div>
+                            <span class="section-eyebrow">PEER-REVIEWED RESEARCH</span>
+                            <h2 class="section-title">Selected Publications</h2>
+                        </div>
+                    </div>
+                    <div class="publications-content">
+                        <div class="publication-list glass-panel spotlight-card">
+                            <div class="publication-item">
+                                <div class="publication-year">[2025]</div>
+                                <div class="publication-details">
+                                    <h3>Role of artificial intelligence in data-centric additive manufacturing processes for biomedical applications</h3>
+                                    <p class="authors">Mohammadnabi, S., <strong>Moslemy, N.</strong>, Taghvaei, H., Zia, A.W., Askarinejad, S., Shalchy, F.</p>
+                                    <p class="journal">Journal of the Mechanical Behavior of Biomedical Materials, Volume 166, June 2025</p>
+                                    <div class="publication-links">
+                                        <a href="https://doi.org/10.1016/j.jmbbm.2025.106949" class="btn-outline" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> DOI: 10.1016/j.jmbbm.2025.106949</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="publication-item">
+                                <div class="publication-year">[2023]</div>
+                                <div class="publication-details">
+                                    <h3>Review in Edible Materials for Sustainable Cultured Meat: Scaffolds and Microcarriers Production</h3>
+                                    <p class="authors"><strong>Moslemy, N.</strong>, Sharifi, E., Asadi-Eydivand, M., Abolfathi, N.</p>
+                                    <p class="journal">International Journal of Food Science and Technology</p>
+                                    <div class="publication-links">
+                                        <a href="https://doi.org/10.1111/ijfs.16703" class="btn-outline" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> DOI: 10.1111/ijfs.16703</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="publication-item">
+                                <div class="publication-year">[2024]</div>
+                                <div class="publication-details">
+                                    <h3>Development of an Edible Scaffold Utilizing Isolated Soy Protein for Sustainable Cultured Meat Production through 3D Bioprinting</h3>
+                                    <p class="authors"><strong>Moslemy, N.</strong>, Taffazoli, M., Abolfathi, N.</p>
+                                    <p class="journal">[Under Review]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RESEARCH POSTS SECTION -->
+            <section id="projects" class="projects">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="hex-icon"><i class="fa fa-folder-open"></i></div>
+                        <div>
+                            <span class="section-eyebrow">FEATURED ARTICLES &amp; MEDIA</span>
+                            <h2 class="section-title">Research Highlights</h2>
+                        </div>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card glass-panel spotlight-card">
+                            <div class="project-image">
+                                <div class="tech-overlay"></div>
+                                <img src="images/AMinAI.jpeg" alt="AI in Additive Manufacturing">
+                            </div>
+                            <div class="project-content">
+                                <h3>AI in Additive Manufacturing</h3>
+                                <p>Review of Artificial Intelligence in Data-Centric Additive Manufacturing Processes for Biomedical Applications.</p>
+                                <div class="project-tags">
+                                    <span class="tag">AI</span>
+                                    <span class="tag">Additive Manufacturing</span>
+                                    <span class="tag">Biomedical</span>
+                                </div>
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7300262521549066242/" class="btn-outline" target="_blank" rel="noopener noreferrer">View LinkedIn Post <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="project-card glass-panel spotlight-card">
+                            <div class="project-image">
+                                <div class="tech-overlay"></div>
+                                <img src="images/meat.jpeg" alt="Sustainable Cultured Meat">
+                            </div>
+                            <div class="project-content">
+                                <h3>Sustainable Cultured Meat</h3>
+                                <p>Development of edible scaffolds and microcarriers focusing on bio-materials and their advanced 3D bioprinting applications.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Scaffolds</span>
+                                    <span class="tag">Microcarriers</span>
+                                    <span class="tag">Bioprinting</span>
+                                </div>
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7105873171978801154/" class="btn-outline" target="_blank" rel="noopener noreferrer">View LinkedIn Post <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="contact">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="hex-icon"><i class="fa fa-envelope"></i></div>
+                        <div>
+                            <span class="section-eyebrow">COLLABORATION &amp; INQUIRIES</span>
+                            <h2 class="section-title">Contact Me</h2>
+                        </div>
+                    </div>
+                    <div class="contact-content glass-panel spotlight-card">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fa fa-at"></i>
+                                <h3>Email</h3>
+                                <p><a href="mailto:nm4015@hw.ac.uk" class="glow-text">nm4015@hw.ac.uk</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa fa-map-marker-alt"></i>
+                                <h3>Location</h3>
+                                <p>Heriot-Watt University<br>Edinburgh, United Kingdom</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <h3>GitHub &amp; Open Source</h3>
+                                <p><a href="https://github.com/nimamoslemy" target="_blank" rel="noopener noreferrer" class="glow-text">github.com/nimamoslemy</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa fa-phone"></i>
+                                <h3>Phone</h3>
+                                <p><a href="tel:+447877667926" class="glow-text">+44 7877667926</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <form id="contactForm" action="https://formspree.io/f/mnjlnodq" method="POST">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="Enter Your Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required placeholder="Enter Your Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" required placeholder="Message Subject">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="5" required placeholder="Your Message..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message <i class="fa fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer>
             <div class="container">
                 <div class="footer-content">
-                    <p>&copy; <span id="year"></span> SYSTEM.NIMA_MOSLEMY // ALL RIGHTS SECURED.</p>
+                    <p>&copy; <span id="year"></span> NIMA MOSLEMY // ADDITIVE MANUFACTURING, AI &amp; OPEN-SOURCE ENGINEERING.</p>
                     <p>Last Sync: <span id="lastUpdated"></span></p>
                 </div>
             </div>

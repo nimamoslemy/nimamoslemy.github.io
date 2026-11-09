@@ -1,32 +1,45 @@
-// Main JavaScript for Interactions and Lattice Canvas
+// Main JavaScript for 2026 Portfolio Interactions, Cursor Spotlight & Dynamic Lattice Canvas
 document.addEventListener('DOMContentLoaded', function() {
     // ----------------------------------------------------
-    // STARTUP BOOT SEQUENCE (ICON TRANSITION)
+    // STARTUP BOOT SEQUENCE (FAST + SKIPPABLE)
     // ----------------------------------------------------
     const startupOverlay = document.getElementById('startup-overlay');
     const iconTransitionContainer = document.getElementById('icon-transition-container');
     const progressBar = document.getElementById('startup-progress-bar');
-    
+    const skipIntroBtn = document.getElementById('skip-intro-btn');
+
+    function closeStartupOverlay() {
+        if (!startupOverlay || startupOverlay.classList.contains('hidden')) return;
+        startupOverlay.classList.add('hidden');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            if (startupOverlay.parentNode) startupOverlay.remove();
+        }, 550);
+    }
+
+    if (skipIntroBtn) {
+        skipIntroBtn.addEventListener('click', closeStartupOverlay);
+    }
+
     if (startupOverlay && iconTransitionContainer) {
-        // Prevent scrolling while booting
         document.body.style.overflow = 'hidden';
         window.scrollTo(0, 0);
-        
+
         const bootSequence = [
-            { type: 'icon', content: "fa-book" },        // Book
-            { type: 'icon', content: "fa-microscope" },  // Lab icon
-            { type: 'icon', content: "fa-cubes" },       // 3D printing
-            { type: 'icon', content: "fa-cogs" },        // Mechanical stuff
-            { type: 'image', content: "my%20pic.jpeg" }  // User image
+            { type: 'icon', content: 'fa-cubes' },
+            { type: 'icon', content: 'fa-microscope' },
+            { type: 'icon', content: 'fa-brain' },
+            { type: 'image', content: 'my%20pic.jpeg' }
         ];
 
-        let delaySum = 300; // Initial delay
-        const stepDuration = 1200; // Matches CSS animation
-        
+        let delaySum = 120;
+        const stepDuration = 420;
+
         bootSequence.forEach((step, index) => {
             setTimeout(() => {
-                iconTransitionContainer.innerHTML = ''; // clear previous
-                
+                if (!startupOverlay || startupOverlay.classList.contains('hidden')) return;
+                iconTransitionContainer.innerHTML = '';
+
                 let elem;
                 if (step.type === 'icon') {
                     elem = document.createElement('i');
@@ -34,74 +47,78 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (step.type === 'image') {
                     elem = document.createElement('div');
                     elem.className = 'transition-element transition-image-wrapper';
-                    
+
                     const img = document.createElement('img');
                     img.src = step.content;
                     img.className = 'transition-image';
-                    
+
                     const name = document.createElement('h1');
                     name.textContent = 'NIMA MOSLEMY';
                     name.className = 'transition-name';
-                    
+
                     elem.appendChild(img);
                     elem.appendChild(name);
                 }
-                
+
                 iconTransitionContainer.appendChild(elem);
-                
-                // Update progress bar
+
                 if (progressBar) {
                     progressBar.style.width = `${((index + 1) / bootSequence.length) * 100}%`;
                 }
-                
-                // End sequence
+
                 if (index === bootSequence.length - 1) {
-                    setTimeout(() => {
-                        startupOverlay.classList.add('hidden');
-                        document.body.style.overflow = ''; // Restore scrolling
-                        
-                        // Remove from DOM eventually
-                        setTimeout(() => {
-                            startupOverlay.remove();
-                        }, 1000);
-                    }, stepDuration);
+                    setTimeout(closeStartupOverlay, stepDuration + 220);
                 }
             }, delaySum);
-            delaySum += stepDuration - 100; // slight overlap
+            delaySum += stepDuration;
         });
     }
 
     // ----------------------------------------------------
+    // INTERACTIVE CURSOR SPOTLIGHT ON BENTO CARDS
+    // ----------------------------------------------------
+    const spotlightCards = document.querySelectorAll('.spotlight-card');
+    document.addEventListener('mousemove', function(e) {
+        spotlightCards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // ----------------------------------------------------
     // SYSTEM DATE & TIME
     // ----------------------------------------------------
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', options) + " // SYS.SYNC";
-    
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const lastUpdatedEl = document.getElementById('lastUpdated');
+    if (lastUpdatedEl) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        lastUpdatedEl.textContent = new Date().toLocaleDateString('en-US', options) + ' // SYS.SYNC';
+    }
+
     // ----------------------------------------------------
     // MOBILE NAV TOGGLE
     // ----------------------------------------------------
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
-    if (menuToggle) {
-        const toggleMenu = function() {
-            navMenu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-            menuToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
-        };
 
-        menuToggle.addEventListener('click', toggleMenu);
-        menuToggle.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleMenu();
-            }
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            const expanded = navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
         });
     }
-    
+
     document.addEventListener('click', function(event) {
-        if (!event.target.closest('.nav-menu') && !event.target.closest('.menu-toggle') && navMenu.classList.contains('active')) {
+        if (navMenu && menuToggle &&
+            !event.target.closest('.nav-menu') &&
+            !event.target.closest('.menu-toggle') &&
+            navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
             menuToggle.classList.remove('active');
             menuToggle.setAttribute('aria-expanded', 'false');
@@ -113,25 +130,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // ----------------------------------------------------
     const navLinks = document.querySelectorAll('.nav-menu a');
     const header = document.querySelector('header');
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (!targetId || !targetId.startsWith('#')) return;
             e.preventDefault();
-            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks.forEach(l => l.classList.remove('active'));
             this.classList.add('active');
-            
-            if (navMenu.classList.contains('active')) {
+
+            if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
-                menuToggle.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
+                if (menuToggle) {
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
             }
 
-            const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
             if (targetSection) {
                 window.scrollTo({
-                    top: targetSection.offsetTop - 80,
+                    top: targetSection.offsetTop - 75,
                     behavior: 'smooth'
                 });
             }
@@ -139,24 +158,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }
-        
+
         const sections = document.querySelectorAll('section');
         let currentSection = '';
-        
+
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 150;
+            const sectionTop = section.offsetTop - 160;
             const sectionHeight = section.offsetHeight;
-            
             if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                 currentSection = section.getAttribute('id');
             }
         });
-        
+
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${currentSection}`) {
@@ -172,18 +192,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
             const formAction = contactForm.getAttribute('action');
-            
-            if (formAction && formAction.includes("YOUR_FORMSPREE_ID")) {
-                alert("SYSTEM MSG: Please create a free account at formspree.io and update the 'YOUR_FORMSPREE_ID' in index.html form action attribute with your actual endpoint to enable email sending.");
-                return;
-            }
-
             const formData = new FormData(contactForm);
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
-            
+
             try {
                 submitBtn.innerHTML = 'Sending... <i class="fa fa-spinner fa-spin"></i>';
                 submitBtn.disabled = true;
@@ -191,9 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const response = await fetch(formAction, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
 
                 if (response.ok) {
@@ -219,17 +230,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const ctx = canvas.getContext('2d');
         let width = canvas.width = window.innerWidth;
         let height = canvas.height = window.innerHeight;
-        
+
         let particles = [];
-        let numParticles = Math.floor((width * height) / 15000); // Responsive density
-        
-        // Settings
+        let numParticles = Math.floor((width * height) / 15000);
+
         const config = {
-            particleColor: 'rgba(197, 160, 89, 0.4)',
-            lineColor: 'rgba(197, 160, 89, 0.15)',
-            particleRadius: 2.5,
-            lineDistance: 140,
-            baseSpeed: 0.15
+            particleColor: 'rgba(212, 175, 55, 0.42)',
+            particleRadius: 2.2,
+            lineDistance: 145,
+            baseSpeed: 0.16
         };
 
         let mouse = { x: null, y: null, radius: 150 };
@@ -268,30 +277,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             update() {
-                // Movement
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Bounce off edges
                 if (this.x < 0 || this.x > width) this.vx = -this.vx;
                 if (this.y < 0 || this.y > height) this.vy = -this.vy;
 
-                // Mouse interaction - repel
                 if (mouse.x != null && mouse.y != null) {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < mouse.radius) {
+
+                    if (distance < mouse.radius && distance > 0) {
                         const forceDirectionX = dx / distance;
                         const forceDirectionY = dy / distance;
                         const force = (mouse.radius - distance) / mouse.radius;
-                        
                         this.x -= forceDirectionX * force * 2;
                         this.y -= forceDirectionY * force * 2;
                     }
                 }
-                
+
                 this.draw();
             }
         }
@@ -310,7 +315,6 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
 
-                // Connect particles
                 for (let j = i; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
@@ -318,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     if (distance < config.lineDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(197, 160, 89, ${0.2 - distance/config.lineDistance * 0.2})`;
+                        ctx.strokeStyle = `rgba(212, 175, 55, ${0.18 - (distance / config.lineDistance) * 0.18})`;
                         ctx.lineWidth = 1;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
