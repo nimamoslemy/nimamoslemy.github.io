@@ -62,7 +62,6 @@
       "description": "PhD researcher in metal additive manufacturing at Heriot-Watt University, working on laser powder bed fusion of BCC lattice structures.",
       "url": "https://nimamoslemy.github.io/",
       "image": "https://nimamoslemy.github.io/images/profile.jpg",
-      "email": "mailto:nm4015@hw.ac.uk",
       "address": { "@type": "PostalAddress", "addressLocality": "Edinburgh", "addressCountry": "GB" },
       "affiliation": { "@type": "CollegeOrUniversity", "name": "Heriot-Watt University", "url": "https://www.hw.ac.uk/" },
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "Amirkabir University of Technology" },
@@ -556,8 +555,7 @@ footer{background:var(--bg);color:var(--mute);padding:1.6rem var(--pad) calc(1.6
   <div class="in contact">
     <div>
       <h2>Get in touch.</h2>
-      <p class="lead">For research collaboration, lattice design questions or software, email is the fastest way to reach me.</p>
-      <a class="big" href="mailto:nm4015@hw.ac.uk">nm4015@hw.ac.uk</a>
+      <p class="lead">For research collaboration, lattice design questions or software, use the contact form or reach out on LinkedIn.</p>
       <dl>
         <dt>Location</dt><dd>Heriot-Watt University, Edinburgh, UK</dd>
         <dt>Profiles</dt><dd><a href="https://www.linkedin.com/in/nimamoslemy/" rel="me noopener">LinkedIn</a>, <a href="https://github.com/nimamoslemy" rel="me noopener">GitHub</a>, <a href="https://scholar.google.com/citations?user=oj20_dkAAAAJ&hl=en" rel="me noopener">Google Scholar</a>, <a href="https://www.researchgate.net/profile/Nima-Moslemy" rel="me noopener">ResearchGate</a></dd>
@@ -691,7 +689,7 @@ readScroll();
         if (!r.ok) throw new Error();
         form.reset(); status.textContent = 'Message sent. I will reply by email.';
       })
-      .catch(function () { status.textContent = 'The message could not be sent. Email nm4015@hw.ac.uk instead.'; })
+      .catch(function () { status.textContent = 'The message could not be sent. Please try again or reach out via LinkedIn.'; })
       .then(function () { btn.disabled = false; });
   });
 })();
